@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock | Design</title>
+
+    <link rel="shortcut icon" href="clock.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="clock-container" >
+        <section>
+            <div class="clock">
+                <div class="hour">
+                    <div class="hr" id="hr"></div>
+                </div>
+
+                <div class="minutes">
+                    <div class="min" id="min"></div>
+                </div>
+
+                <div class="seconds">
+                    <div class="second" id="sec"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDFRhZptjV2f0WpAcwyJB2fuyTRGIl5jsM",
+          authDomain: "clock-design-ui.firebaseapp.com",
+          projectId: "clock-design-ui",
+          storageBucket: "clock-design-ui.appspot.com",
+          messagingSenderId: "889510025583",
+          appId: "1:889510025583:web:f4cce126a649b937f4b09a"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+      </script>
+</body>
+</html>
