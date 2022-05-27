@@ -2,6 +2,7 @@
     box-sizing: 0;
     padding: 0;
     margin: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
@@ -14,8 +15,22 @@ body {
     height: 100vh;
 }
 
-.clock-container {
+body.light {
+    background: #318CE7;
+}
+
+#clock-container {
     visibility: hidden;
+}
+
+.light .clock {
+    box-shadow:
+    inset 0 -15px 15px rgba(0,0,0,0.05),
+    inset 15px -15px 15px rgba(0,0,0,0.05),
+    inset -15px 15px 15px rgba(0,0,0,0.05),
+    inset 0 -15px 15px rgba(0,0,0,0.05);
+    border: 8px solid #fff;
+    background-color: #FFF;
 }
 
 .clock {
@@ -44,6 +59,11 @@ body {
     z-index: 10000;
 }
 
+.light .clock::before {
+    border: 1px solid white;
+    background-color: #3f3f3f;
+}
+
 
 .clock .hour,
 .clock .minutes,
@@ -53,8 +73,8 @@ body {
 
 
 .clock .hour, .hr {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
 }
 
 .clock .minutes, .min {
@@ -78,11 +98,14 @@ body {
     content: '';
     position: absolute;
     width: 8px;
-    height: 50px;
+    height: 40px;
     background-color: #ff105e;
     z-index: 10;
     border-radius: 6px 6px 0 0;
+}
 
+.light .hr::before {
+    background-color: #3f3f3f
 }
 
 .min::before {
@@ -93,7 +116,10 @@ body {
     background-color: #fff;
     z-index: 11;
     border-radius: 6px 6px 0 0;
+}
 
+.light .min::before {
+    background-color: #7f7f7f;
 }
 
 .second::before {
@@ -101,7 +127,48 @@ body {
     position: absolute;
     width: 2px;
     height: 120px;
-    background-color: #fff;
+    background-color: #318CE7;
     z-index: 12;
     border-radius: 6px 6px 0 0;
+}
+
+.light .second::before {
+    background-color: #ff105e
+}
+
+
+button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    font-size: 0.75rem;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.light button {
+
+}
+
+.dark button {
+    color: white;
+    background-color: #091921;
+    border: none;
+    box-shadow: 5px 5px 10px -8px rgba(255,255,255,0.2),
+     -5px -5px 10px -8px rgba(255,255,255,0.2),
+     5px -5px 10px -8px rgba(255,255,255,0.2),
+     -5px 5px 10px -8px rgba(255,255,255,0.2);
+}
+
+.light button {
+    color: rgba(255,255,255,0.8);
+    background-color: #318CE7;
+    border: none;
+    box-shadow: 5px 5px 10px -8px rgba(255,255,255,0.2),
+     -5px -5px 10px -8px rgba(255,255,255,0.2),
+     5px -5px 10px -8px rgba(255,255,255,0.2),
+     -5px 5px 10px -8px rgba(255,255,255,0.2);
 }
